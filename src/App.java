@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,6 +10,7 @@ import java.util.Scanner;
 
 public class App {
 	public static void main(String[] args) {
+		
 		/*Scanner entrada = new Scanner(System.in);
 		
 		int nodo;
@@ -30,20 +29,7 @@ public class App {
 		System.out.println("Vertice mais proximo: " + g.getAdjacenteProximo(nodo));
 		System.out.println("Arestas: " + g.getArestas());*/
 
-//		
-//		System.out.println("Maior(es) grau(s): "+g.maiorGrau());
-//		
-//		System.out.println("\nNúmero de arestas:");
-//		System.out.println(g.contAresta());
-//		
-//		System.out.println("Percursos. Digite o nodo inicial: ");
-//		int vertinicial = entrada.nextInt();
-//		
-//		System.out.println("\nPercurso por Amplitude: ");
-//		System.out.println(g.percursoAmplitude(vertinicial));
-//		
-//		System.out.println("\nPercurso por Profundidade: ");
-//		System.out.println(g.percursoProfundidade(vertinicial));
+
 
 		ArrayList<CiaAerea> listAirlines = null;
         try {
@@ -75,7 +61,7 @@ public class App {
         ArrayList<Pais> listPais = null;
         try {
 
-            BufferedReader in = new BufferedReader(new FileReader(new File("src\\data\\airlines.dat")));
+            BufferedReader in = new BufferedReader(new FileReader(new File("src\\data\\countries.dat")));
             System.out.println("File open successful!");
             listPais = new ArrayList<>();
             in.readLine();
@@ -91,13 +77,12 @@ public class App {
             }
 
         } catch (IOException e) {
-            System.out.println("Erro ao ler airlines.dat");
+            System.out.println("Erro ao ler countries.dat");
         }
         
 //        for(Pais p : listPais){
 //        	System.out.println(p);
-//        }
-        
+//        }  
         
         ArrayList<Aeroporto> listAero = null;
         try {
@@ -121,41 +106,43 @@ public class App {
             }
 
         } catch (IOException e) {
-            System.out.println("Erro ao ler airlines.dat");
+            System.out.println("Erro ao ler airports.dat");
         }
         
-        for(Aeroporto p : listAero){
-        	System.out.println(p);
-        }
+//       for(Aeroporto p : listAero){
+//       	System.out.println(p);
+//       }
+        
         
         ArrayList<Rota> listRota = null;
         try {
 
-            BufferedReader in = new BufferedReader(new FileReader(new File("src\\data\\airports.dat")));
+            BufferedReader in = new BufferedReader(new FileReader(new File("src\\data\\routes.dat")));
             System.out.println("File open successful!");
-            listAero = new ArrayList<>();
+            listRota = new ArrayList<>();
             in.readLine();
             String line;
             while ((line = in.readLine()) != null) {
                 String[] temp;
                 String delimiter = ";";
                 temp = line.split(delimiter);
-                Aeroporto a = new Aeroporto();
-                a.codAero = temp[0];
-                a.latitude = (Double.parseDouble(temp[1]));
-                a.longitude = (Double.parseDouble(temp[2]));
-                a.nome = temp[3];
-               a.codPais = (temp[4]);
-                listAero.add(a);
+                Rota r = new Rota();
+                r.origem = temp[0];
+                r.destino = temp[1];
+                r.distancia = Double.parseDouble(temp[2]);
+                r.codCiaa = temp[3];
+                listRota.add(r);
             }
 
         } catch (IOException e) {
-            System.out.println("Erro ao ler airlines.dat");
+            System.out.println("Erro ao ler routes.dat");
         }
         
-        for(Aeroporto p : listAero){
-        	System.out.println(p);
-        }
+//        for(Rota r : listRota){
+//        	System.out.println(r);
+//        }
+        
+        
 		
 	}
 

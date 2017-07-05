@@ -4,50 +4,75 @@ public class Rota implements Serializable {
 
 	private static final long serialVersionUID = 7686714783256478043L;
 	
-	private CiaAerea cia;
-	private Aeroporto origem;
-	private Aeroporto destino;
-	private String ciaa, orig, dest;
+	 
+	 String  origem, destino, codCiaa;
+	 double distancia;
 
-	public Rota(CiaAerea cia, Aeroporto origem, Aeroporto destino) {
-		this.cia = cia;
+	 
+	 //códigodo aeroporto origem, código do aeroporto destino, distância e código da
+	 //companhia aérea.
+	public Rota() {
 		this.origem = origem;
 		this.destino = destino;
+		this.distancia = distancia;
+		this.codCiaa = codCiaa;
+		
 		
 	}
-	public Rota(String ciaa, String orig, String dest){
-		this.ciaa = ciaa;
-		this.orig = orig;
-		this.dest = dest;
-		
-	}
+
 
 	@Override
 	public String toString() {
-		return cia.getCodigo() + ": " + origem.getCodAero() + " -> " + destino.getCodAero() ;
+
+		return "Rota [origem=" + origem + ", destino=" + destino + ", codCiaa=" + codCiaa + ", distancia=" + distancia
+				+ "]";
+
 	}
 
-	public CiaAerea getCia() {
-		return cia;
+
+	public String getOrigem() {
+		return origem;
 	}
 
-	public Aeroporto getDestino() {
+
+	public void setOrigem(String origem) {
+		this.origem = origem;
+	}
+
+
+	public String getDestino() {
 		return destino;
 	}
 
-	public Aeroporto getOrigem() {
-		return origem;
+
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+
+
+	public String getCodCiaa() {
+		return codCiaa;
+	}
+
+
+	public void setCodCiaa(String codCiaa) {
+		this.codCiaa = codCiaa;
+	}
+
+
+	public double getDistancia() {
+		return distancia;
+	}
+
+
+	public void setDistancia(double distancia) {
+		this.distancia = distancia;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
-	public String getCiaa() {
-		return ciaa;
-	}
-	public String getOrig() {
-		return orig;
-	}
-	public String getDest() {
-		return dest;
-	}
 	
-	
-}
+}s
