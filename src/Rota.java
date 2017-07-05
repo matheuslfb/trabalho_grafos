@@ -24,7 +24,7 @@ public class Rota implements Serializable {
 
 	@Override
 	public String toString() {
-		return cia.getCodigo() + ": " + origem.getCodigo() + " -> " + destino.getCodigo() ;
+		return cia.getCodigo() + ": " + origem.getCodAero() + " -> " + destino.getCodAero() ;
 	}
 
 	public CiaAerea getCia() {
