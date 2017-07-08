@@ -138,9 +138,9 @@ public class App {
             System.out.println("Erro ao ler routes.dat");
         }
         
-//        for(Rota r : listRota){
-//        	System.out.println(r);
-//        }
+       for(Rota r : listRota){
+        	System.out.println(r);
+        }
         
         
 		
